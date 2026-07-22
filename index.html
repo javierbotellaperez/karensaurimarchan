@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Karen Sauri Marchan — Creative Producer</title>
 
-  <!-- Google Fonts: Serif clásica (Playfair) + Sans-serif moderna (Inter) -->
+  <!-- Google Fonts: Serif clásica (Playfair Display) + Sans-serif moderna (Inter) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -17,14 +17,20 @@
   <!-- NAVEGACIÓN / HEADER -->
   <header class="site-header">
     <div class="logo">
-      <a href="#hero">KAREN SAURI MARCHAN</a>
+      <a href="#hero">
+        <!-- Si usas una imagen para el logo, descomenta la siguiente línea y pon tu ruta: -->
+        <!-- <img src="assets/images/logo.jpg" alt="Karen Sauri Marchan" class="site-logo-img"> -->
+        
+        <!-- Logo Tipográfico Estilo Hollywood Golden Era: -->
+        KAREN SAURI MARCHAN
+      </a>
     </div>
     <nav class="main-nav">
       <ul>
         <li><a href="#hero">Featured</a></li>
         <li><a href="#grid">Music Videos</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="HTTPS_URL_DE_DRAMA" target="_blank" class="nav-drama">DRAMA ↗</a></li>
+        <li><a href="https://drama-project-url.com" target="_blank" class="nav-drama">DRAMA ↗</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -37,7 +43,6 @@
       <!-- Slide 1 -->
       <div class="slide active">
         <div class="video-background">
-          <!-- Ejemplo de vídeo HTML5 en loop o iframe de Vimeo -->
           <video autoplay muted loop playsinline poster="assets/images/poster-1.jpg">
             <source src="assets/videos/reel-clip-1.mp4" type="video/mp4">
           </video>
@@ -46,7 +51,7 @@
           <span class="role">CREATIVE PRODUCER</span>
           <h2 class="song-title">Nombre de la Canción</h2>
           <h3 class="artist-name">Nombre del Artista</h3>
-          <p class="meta">Dir. Nombre Director | Label / 2026</p>
+          <p class="meta">Dir. Nombre Director | 2026</p>
         </div>
       </div>
 
@@ -70,18 +75,18 @@
     <!-- Controles del Slider -->
     <div class="slider-controls">
       <button class="prev-slide">← PREV</button>
-      <span class="slide-counter">01 / 05</span>
+      <span class="slide-counter">01 / 02</span>
       <button class="next-slide">NEXT →</button>
     </div>
   </section>
 
-  <!-- 2. GRILL / MUSIC VIDEOS GRID -->
+  <!-- 2. MUSIC VIDEOS GRID (EL GRILL) -->
   <section id="grid" class="videos-grid-section">
     <div class="container">
-      <h2 class="section-title">Selected Works</h2>
+      <h2 class="section-title">Music Videos</h2>
       
       <div class="grid-container">
-        <!-- Tarjeta de Vídeo 1 -->
+        <!-- Tarjeta de Vídeo 1 (Abre Vimeo) -->
         <article class="video-card" data-vimeo-id="123456789">
           <div class="thumb-wrapper">
             <img src="assets/images/thumb-1.jpg" alt="Portada vídeo" loading="lazy">
@@ -95,8 +100,8 @@
           </div>
         </article>
 
-        <!-- Tarjeta de Vídeo 2 -->
-        <article class="video-card" data-vimeo-id="987654321">
+        <!-- Tarjeta de Vídeo 2 (Abre YouTube) -->
+        <article class="video-card" data-youtube-id="dQw4w9WgXcQ">
           <div class="thumb-wrapper">
             <img src="assets/images/thumb-2.jpg" alt="Portada vídeo" loading="lazy">
             <div class="card-overlay">
@@ -108,13 +113,11 @@
             <p>Producer</p>
           </div>
         </article>
-        
-        <!-- Añadir más tarjetas según sea necesario -->
       </div>
     </div>
   </section>
 
-  <!-- 3. ABOUT (ESTILO CINE CLÁSICO) -->
+  <!-- 3. ABOUT (ESTILO CINE CLÁSICO - JOAN CRAWFORD) -->
   <section id="about" class="about-section">
     <div class="about-container">
       <!-- Foto de Karen en el centro superior -->
@@ -129,22 +132,22 @@
         
         <div class="about-bio">
           <p>
-            Texto de biografía de Karen. Aquí se explica su enfoque de producción, su visión narrativa, estética cinematográfica y trayectoria en la industria de los vídeos musicales y proyectos creativos.
+            Productora creativa especializada en vídeo musical y narrativa visual contemporánea con una marcada devoción por la estética del cine clásico. Enfocada en elevar la visión artística de cada proyecto mediante un diseño de producción impecable y un cuidado meticuloso del ritmo, la luz y la atmósfera.
           </p>
         </div>
 
-        <!-- Banner / Enlace a DRAMA dentro de About -->
+        <!-- Banner / Enlace a DRAMA -->
         <div class="drama-highlight">
           <p>Founder & Executive Producer at</p>
-          <a href="HTTPS_URL_DE_DRAMA" target="_blank" class="drama-button">
-            DRAMA PROJECT ↗
+          <a href="https://drama-project-url.com" target="_blank" class="drama-button">
+            DRAMA ↗
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 4. CONTACT -->
+  <!-- 4. CONTACT & FOOTER -->
   <footer id="contact" class="contact-section">
     <div class="container">
       <h2 class="section-title">Get in Touch</h2>
@@ -159,14 +162,14 @@
         <a href="https://instagram.com/" target="_blank">Instagram</a>
         <a href="https://vimeo.com/" target="_blank">Vimeo</a>
         <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
-        <a href="HTTPS_URL_DE_DRAMA" target="_blank">DRAMA</a>
+        <a href="https://drama-project-url.com" target="_blank">DRAMA</a>
       </div>
 
       <p class="credits-footer">© 2026 Karen Sauri Marchan</p>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
   <script src="js/slider.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
