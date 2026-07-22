@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karen Sauri Marchan — Creative Producer</title>
+
+  <!-- Google Fonts: Serif clásica (Playfair) + Sans-serif moderna (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVEGACIÓN / HEADER -->
+  <header class="site-header">
+    <div class="logo">
+      <a href="#hero">KAREN SAURI MARCHAN</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#hero">Featured</a></li>
+        <li><a href="#grid">Music Videos</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="HTTPS_URL_DE_DRAMA" target="_blank" class="nav-drama">DRAMA ↗</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 1. FRONT PAGE / FULLSCREEN VIDEO SLIDER -->
+  <section id="hero" class="hero-slider-section">
+    <div class="slider-container">
+      
+      <!-- Slide 1 -->
+      <div class="slide active">
+        <div class="video-background">
+          <!-- Ejemplo de vídeo HTML5 en loop o iframe de Vimeo -->
+          <video autoplay muted loop playsinline poster="assets/images/poster-1.jpg">
+            <source src="assets/videos/reel-clip-1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="slide-credits">
+          <span class="role">CREATIVE PRODUCER</span>
+          <h2 class="song-title">Nombre de la Canción</h2>
+          <h3 class="artist-name">Nombre del Artista</h3>
+          <p class="meta">Dir. Nombre Director | Label / 2026</p>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide">
+        <div class="video-background">
+          <video muted loop playsinline poster="assets/images/poster-2.jpg">
+            <source src="assets/videos/reel-clip-2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="slide-credits">
+          <span class="role">PRODUCER</span>
+          <h2 class="song-title">Título Segundo Vídeo</h2>
+          <h3 class="artist-name">Artista Dos</h3>
+          <p class="meta">Dir. Nombre Director | 2025</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Controles del Slider -->
+    <div class="slider-controls">
+      <button class="prev-slide">← PREV</button>
+      <span class="slide-counter">01 / 05</span>
+      <button class="next-slide">NEXT →</button>
+    </div>
+  </section>
+
+  <!-- 2. GRILL / MUSIC VIDEOS GRID -->
+  <section id="grid" class="videos-grid-section">
+    <div class="container">
+      <h2 class="section-title">Selected Works</h2>
+      
+      <div class="grid-container">
+        <!-- Tarjeta de Vídeo 1 -->
+        <article class="video-card" data-vimeo-id="123456789">
+          <div class="thumb-wrapper">
+            <img src="assets/images/thumb-1.jpg" alt="Portada vídeo" loading="lazy">
+            <div class="card-overlay">
+              <span>PLAY VIDEO</span>
+            </div>
+          </div>
+          <div class="card-info">
+            <h4>Artista — Canción</h4>
+            <p>Creative Producer</p>
+          </div>
+        </article>
+
+        <!-- Tarjeta de Vídeo 2 -->
+        <article class="video-card" data-vimeo-id="987654321">
+          <div class="thumb-wrapper">
+            <img src="assets/images/thumb-2.jpg" alt="Portada vídeo" loading="lazy">
+            <div class="card-overlay">
+              <span>PLAY VIDEO</span>
+            </div>
+          </div>
+          <div class="card-info">
+            <h4>Artista 2 — Canción 2</h4>
+            <p>Producer</p>
+          </div>
+        </article>
+        
+        <!-- Añadir más tarjetas según sea necesario -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. ABOUT (ESTILO CINE CLÁSICO) -->
+  <section id="about" class="about-section">
+    <div class="about-container">
+      <!-- Foto de Karen en el centro superior -->
+      <div class="portrait-wrapper">
+        <img src="assets/images/karen-portrait-bw.jpg" alt="Karen Sauri Marchan" class="portrait-img">
+      </div>
+      
+      <!-- Texto explicativo abajo -->
+      <div class="about-content">
+        <h2 class="about-name">KAREN SAURI MARCHAN</h2>
+        <p class="about-tagline">Creative Producer & Audiovisual Creator</p>
+        
+        <div class="about-bio">
+          <p>
+            Texto de biografía de Karen. Aquí se explica su enfoque de producción, su visión narrativa, estética cinematográfica y trayectoria en la industria de los vídeos musicales y proyectos creativos.
+          </p>
+        </div>
+
+        <!-- Banner / Enlace a DRAMA dentro de About -->
+        <div class="drama-highlight">
+          <p>Founder & Executive Producer at</p>
+          <a href="HTTPS_URL_DE_DRAMA" target="_blank" class="drama-button">
+            DRAMA PROJECT ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. CONTACT -->
+  <footer id="contact" class="contact-section">
+    <div class="container">
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="contact-sub">Available for global productions & creative direction.</p>
+      
+      <div class="contact-details">
+        <a href="mailto:karen@email.com" class="email-link">karen@email.com</a>
+        <p class="phone">+34 600 000 000</p>
+      </div>
+
+      <div class="social-links">
+        <a href="https://instagram.com/" target="_blank">Instagram</a>
+        <a href="https://vimeo.com/" target="_blank">Vimeo</a>
+        <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+        <a href="HTTPS_URL_DE_DRAMA" target="_blank">DRAMA</a>
+      </div>
+
+      <p class="credits-footer">© 2026 Karen Sauri Marchan</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/slider.js"></script>
+</body>
+</html>
