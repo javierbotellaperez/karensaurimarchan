@@ -17,7 +17,6 @@
     --text-primary: #f5f4f0;
     --text-secondary: #a0a0a0;
     --accent-gold: #d4af37;
-    --accent-drama: #e50914;
     --border-color: rgba(255, 255, 255, 0.1);
     
     --font-serif: 'Playfair Display', Georgia, serif;
@@ -72,12 +71,44 @@ ul {
     border-bottom: 1px solid var(--border-color);
 }
 
+/* Logo Tipográfico Estilo Hollywood Gold */
 .logo a {
     font-family: var(--font-serif);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
+    color: var(--text-primary);
+    display: inline-block;
+    position: relative;
+}
+
+.logo a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--accent-gold);
+    transition: var(--transition-smooth);
+}
+
+.logo a:hover::after {
+    width: 100%;
+}
+
+/* Estilo por si usas logo.jpg */
+.site-logo-img {
+    height: 35px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    transition: var(--transition-smooth);
+}
+
+.site-logo-img:hover {
+    opacity: 0.8;
 }
 
 .main-nav ul {
@@ -115,7 +146,7 @@ ul {
     width: 100%;
 }
 
-/* DRAMA Link Styling */
+/* Link destacado DRAMA */
 .main-nav .nav-drama {
     color: var(--text-primary);
     font-weight: 600;
@@ -291,7 +322,6 @@ ul {
 
 .video-card {
     cursor: pointer;
-    group: relative;
 }
 
 .thumb-wrapper {
@@ -375,7 +405,7 @@ ul {
     text-align: center;
 }
 
-/* Retrato de Karen en Blanco y Negro Dramático */
+/* Retrato de Karen en B&N Dramático */
 .portrait-wrapper {
     width: 220px;
     height: 280px;
@@ -392,7 +422,7 @@ ul {
     box-shadow: 0 15px 35px rgba(0,0,0,0.8);
 }
 
-/* Marco sutil tipo Hollywood */
+/* Marco sutil tipo Hollywood Noir */
 .portrait-wrapper::before {
     content: '';
     position: absolute;
@@ -435,8 +465,6 @@ ul {
     background: #0d0d0d;
     border: 1px solid var(--border-color);
     margin-top: 2rem;
-    position: relative;
-    overflow: hidden;
 }
 
 .drama-highlight p {
