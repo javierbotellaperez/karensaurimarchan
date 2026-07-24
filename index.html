@@ -17,45 +17,82 @@
   <!-- NAVEGACIÓN / HEADER -->
   <header class="site-header">
     <div class="logo">
-      <a href="#hero">
-        <!-- DRAMA es ahora el logo principal -->
-        <img src="assets/images/logo.jpg" alt="DRAMA Logo" class="site-logo-img">
-      </a>
+      <a href="#hero" class="brand-name">KAREN SAURÍ MARCHÁN</a>
     </div>
     <nav class="main-nav">
       <ul>
-        <!-- Quitamos FEATURE -->
         <li><a href="#grid">Music Videos</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="https://javierbotellaperez.github.io/holadrama" target="_blank" class="nav-drama">DRAMA ↗</a></li>
+        <li>
+          <a href="https://javierbotellaperez.github.io/holadrama" target="_blank" class="nav-drama-logo">
+            <img src="images/logo.jpg" alt="DRAMA Logo" class="drama-logo-img">
+          </a>
+        </li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- 1. HERO SLIDER SECTION (SECCIÓN INICIAL) -->
+  <!-- 1. HERO SLIDER SECTION -->
   <section id="hero" class="hero-slider-section">
     <div class="slider-container">
       
       <!-- Slide 1 -->
       <div class="slide active">
         <div class="video-background">
-          <video autoplay muted loop playsinline poster="assets/images/poster-1.jpg">
-            <source src="assets/videos/reel-clip-1.mp4" type="video/mp4">
+          <video autoplay muted loop playsinline poster="images/poster-1.jpg">
+            <source src="videos/reel-clip-1.mp4" type="video/mp4">
           </video>
         </div>
         <div class="slide-credits">
           <span class="role">PRODUCER</span>
           <h2 class="song-title">Illusion</h2>
           <h3 class="artist-name">Dua Lipa</h3>
-          <p class="meta">Dir. Tanu Muiño| 2024</p>
+          <p class="meta">Dir. Tanu Muiño | 2024</p>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide">
+        <div class="video-background">
+          <video muted loop playsinline poster="images/poster-2.jpg">
+            <source src="videos/reel-clip-2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="slide-credits">
+          <span class="role">EXECUTIVE PRODUCER</span>
+          <h2 class="song-title">Messiah</h2>
+          <h3 class="artist-name">SEVDALIZA</h3>
+          <p class="meta">Dir. Director Name | 2024</p>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide">
+        <div class="video-background">
+          <video muted loop playsinline poster="images/poster-3.jpg">
+            <source src="videos/reel-clip-3.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="slide-credits">
+          <span class="role">EXECUTIVE PRODUCER</span>
+          <h2 class="song-title">Heroina</h2>
+          <h3 class="artist-name">SEVDALIZA</h3>
+          <p class="meta">Dir. Director Name | 2024</p>
         </div>
       </div>
 
     </div>
+
+    <!-- Controles para Deslizar Vídeos -->
+    <div class="slider-controls">
+      <button class="prev-slide">← PREV</button>
+      <span class="slide-counter">01 / 03</span>
+      <button class="next-slide">NEXT →</button>
+    </div>
   </section>
 
-  <!-- 2. MUSIC VIDEOS GRID (LOS 3 VÍDEOS DE PRUEBA) -->
+  <!-- 2. MUSIC VIDEOS GRID -->
   <section id="grid" class="videos-grid-section">
     <div class="container">
       <h2 class="section-title">Music Videos</h2>
@@ -63,9 +100,9 @@
       <div class="grid-container">
         
         <!-- VÍDEO 1 -->
-        <article class="video-card" data-vimeo-id="123456789">
+        <article class="video-card" data-video-src="videos/reel-clip-1.mp4">
           <div class="thumb-wrapper">
-            <img src="assets/images/thumb-1.jpg" alt="Vídeo 1" loading="lazy">
+            <img src="images/thumb-1.jpg" alt="Dua Lipa - Illusion" loading="lazy">
             <div class="card-overlay">
               <span>PLAY VIDEO</span>
             </div>
@@ -77,9 +114,9 @@
         </article>
 
         <!-- VÍDEO 2 -->
-        <article class="video-card" data-vimeo-id="987654321">
+        <article class="video-card" data-video-src="videos/reel-clip-2.mp4">
           <div class="thumb-wrapper">
-            <img src="assets/images/thumb-2.jpg" alt="Vídeo 2" loading="lazy">
+            <img src="images/thumb-2.jpg" alt="SEVDALIZA - Messiah" loading="lazy">
             <div class="card-overlay">
               <span>PLAY VIDEO</span>
             </div>
@@ -91,9 +128,9 @@
         </article>
 
         <!-- VÍDEO 3 -->
-        <article class="video-card" data-vimeo-id="456789123">
+        <article class="video-card" data-video-src="videos/reel-clip-3.mp4">
           <div class="thumb-wrapper">
-            <img src="assets/images/thumb-3.jpg" alt="Vídeo 3" loading="lazy">
+            <img src="images/thumb-3.jpg" alt="SEVDALIZA - Heroina" loading="lazy">
             <div class="card-overlay">
               <span>PLAY VIDEO</span>
             </div>
@@ -111,9 +148,9 @@
   <!-- 3. ABOUT SECTION -->
   <section id="about" class="about-section">
     <div class="about-container">
-      <!-- Foto de Karen (Ahora en Color) -->
+      <!-- Foto de Karen usando la ruta exacta de tu carpeta -->
       <div class="portrait-wrapper">
-        <img src="assets/images/karen-portrait.jpg" alt="Karen Sauri Marchan" class="portrait-img">
+        <img src="images/karen-portrait-bw.jpg" alt="Karen Saurí Marchán" class="portrait-img">
       </div>
       
       <!-- Contenido del About -->
@@ -126,10 +163,10 @@
           </p>
         </div>
 
-        <!-- Banner / Enlace a DRAMA -->
+        <!-- Banner / Enlace con Logo a DRAMA -->
         <div class="drama-highlight">
           <a href="https://javierbotellaperez.github.io/holadrama" target="_blank" class="drama-button">
-            DRAMA ↗
+            <img src="images/logo.jpg" alt="DRAMA Logo" class="drama-btn-img">
           </a>
         </div>
       </div>
@@ -153,6 +190,16 @@
       <p class="credits-footer">© 2026 Karen Saurí Marchán</p>
     </div>
   </footer>
+
+  <!-- REPRODUCTOR MODAL LIGHTBOX PARA REPRODUCIR VÍDEOS -->
+  <div id="videoModal" class="video-modal">
+    <div class="modal-content">
+      <button class="close-modal">&times; CLOSE</button>
+      <video id="modalVideo" controls autoplay playsinline>
+        <source src="" type="video/mp4">
+      </video>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
