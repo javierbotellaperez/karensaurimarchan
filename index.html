@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Karen Sauri Marchan — Creative Producer</title>
 
-  <!-- Google Fonts: Serif clásica (Playfair Display) + Sans-serif moderna (Inter) -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -18,25 +18,22 @@
   <header class="site-header">
     <div class="logo">
       <a href="#hero">
-        <!-- Si usas una imagen para el logo, descomenta la siguiente línea y pon tu ruta: -->
-        <!-- <img src="assets/images/logo.jpg" alt="Karen Sauri Marchan" class="site-logo-img"> -->
-        
-        <!-- Logo Tipográfico Estilo Hollywood Golden Era: -->
-        KAREN SAURI MARCHAN
+        <!-- DRAMA es ahora el logo principal -->
+        <img src="assets/images/logo.jpg" alt="DRAMA Logo" class="site-logo-img">
       </a>
     </div>
     <nav class="main-nav">
       <ul>
-        <li><a href="#hero">Featured</a></li>
+        <!-- Quitamos FEATURE -->
         <li><a href="#grid">Music Videos</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="https://drama-project-url.com" target="_blank" class="nav-drama">DRAMA ↗</a></li>
+        <li><a href="https://javierbotellaperez.github.io/holadrama" target="_blank" class="nav-drama">DRAMA ↗</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- 1. FRONT PAGE / FULLSCREEN VIDEO SLIDER -->
+  <!-- 1. HERO SLIDER SECTION (SECCIÓN INICIAL) -->
   <section id="hero" class="hero-slider-section">
     <div class="slider-container">
       
@@ -51,59 +48,38 @@
           <span class="role">CREATIVE PRODUCER</span>
           <h2 class="song-title">Nombre de la Canción</h2>
           <h3 class="artist-name">Nombre del Artista</h3>
-          <p class="meta">Dir. Nombre Director | 2026</p>
+          <p class="meta">Dir. Director | 2026</p>
         </div>
       </div>
 
-      <!-- Slide 2 -->
-      <div class="slide">
-        <div class="video-background">
-          <video muted loop playsinline poster="assets/images/poster-2.jpg">
-            <source src="assets/videos/reel-clip-2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="slide-credits">
-          <span class="role">PRODUCER</span>
-          <h2 class="song-title">Título Segundo Vídeo</h2>
-          <h3 class="artist-name">Artista Dos</h3>
-          <p class="meta">Dir. Nombre Director | 2025</p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Controles del Slider -->
-    <div class="slider-controls">
-      <button class="prev-slide">← PREV</button>
-      <span class="slide-counter">01 / 02</span>
-      <button class="next-slide">NEXT →</button>
     </div>
   </section>
 
-  <!-- 2. MUSIC VIDEOS GRID (EL GRILL) -->
+  <!-- 2. MUSIC VIDEOS GRID (LOS 3 VÍDEOS DE PRUEBA) -->
   <section id="grid" class="videos-grid-section">
     <div class="container">
       <h2 class="section-title">Music Videos</h2>
       
       <div class="grid-container">
-        <!-- Tarjeta de Vídeo 1 (Abre Vimeo) -->
+        
+        <!-- VÍDEO 1 -->
         <article class="video-card" data-vimeo-id="123456789">
           <div class="thumb-wrapper">
-            <img src="assets/images/thumb-1.jpg" alt="Portada vídeo" loading="lazy">
+            <img src="assets/images/thumb-1.jpg" alt="Vídeo 1" loading="lazy">
             <div class="card-overlay">
               <span>PLAY VIDEO</span>
             </div>
           </div>
           <div class="card-info">
-            <h4>Artista — Canción</h4>
+            <h4>Artista 1 — Canción 1</h4>
             <p>Creative Producer</p>
           </div>
         </article>
 
-        <!-- Tarjeta de Vídeo 2 (Abre YouTube) -->
-        <article class="video-card" data-youtube-id="dQw4w9WgXcQ">
+        <!-- VÍDEO 2 -->
+        <article class="video-card" data-vimeo-id="987654321">
           <div class="thumb-wrapper">
-            <img src="assets/images/thumb-2.jpg" alt="Portada vídeo" loading="lazy">
+            <img src="assets/images/thumb-2.jpg" alt="Vídeo 2" loading="lazy">
             <div class="card-overlay">
               <span>PLAY VIDEO</span>
             </div>
@@ -113,33 +89,46 @@
             <p>Producer</p>
           </div>
         </article>
+
+        <!-- VÍDEO 3 -->
+        <article class="video-card" data-vimeo-id="456789123">
+          <div class="thumb-wrapper">
+            <img src="assets/images/thumb-3.jpg" alt="Vídeo 3" loading="lazy">
+            <div class="card-overlay">
+              <span>PLAY VIDEO</span>
+            </div>
+          </div>
+          <div class="card-info">
+            <h4>Artista 3 — Canción 3</h4>
+            <p>Executive Producer</p>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
 
-  <!-- 3. ABOUT (ESTILO CINE CLÁSICO - JOAN CRAWFORD) -->
+  <!-- 3. ABOUT SECTION -->
   <section id="about" class="about-section">
     <div class="about-container">
-      <!-- Foto de Karen en el centro superior -->
+      <!-- Foto de Karen (Ahora en Color) -->
       <div class="portrait-wrapper">
-        <img src="assets/images/karen-portrait-bw.jpg" alt="Karen Sauri Marchan" class="portrait-img">
+        <img src="assets/images/karen-portrait.jpg" alt="Karen Sauri Marchan" class="portrait-img">
       </div>
       
-      <!-- Texto explicativo abajo -->
+      <!-- Contenido del About -->
       <div class="about-content">
-        <h2 class="about-name">KAREN SAURI MARCHAN</h2>
-        <p class="about-tagline">Creative Producer & Audiovisual Creator</p>
+        <h2 class="about-name">KAREN SAURÍ MARCHÁN</h2>
         
         <div class="about-bio">
           <p>
-            Productora creativa especializada en vídeo musical y narrativa visual contemporánea con una marcada devoción por la estética del cine clásico. Enfocada en elevar la visión artística de cada proyecto mediante un diseño de producción impecable y un cuidado meticuloso del ritmo, la luz y la atmósfera.
+            EP & Founder <a href="https://javierbotellaperez.github.io/holadrama" target="_blank" class="bio-link">DRAMA</a> / Freelance Creative Producer / Producer Motomami World Tour / Former Head of Music Videos <a href="https://canadacanada.com" target="_blank" class="bio-link">CANADA</a>
           </p>
         </div>
 
         <!-- Banner / Enlace a DRAMA -->
         <div class="drama-highlight">
-          <p>Founder & Executive Producer at</p>
-          <a href="https://drama-project-url.com" target="_blank" class="drama-button">
+          <a href="https://javierbotellaperez.github.io/holadrama" target="_blank" class="drama-button">
             DRAMA ↗
           </a>
         </div>
@@ -151,25 +140,20 @@
   <footer id="contact" class="contact-section">
     <div class="container">
       <h2 class="section-title">Get in Touch</h2>
-      <p class="contact-sub">Available for global productions & creative direction.</p>
       
       <div class="contact-details">
         <a href="mailto:karen@email.com" class="email-link">karen@email.com</a>
-        <p class="phone">+34 600 000 000</p>
       </div>
 
       <div class="social-links">
-        <a href="https://instagram.com/" target="_blank">Instagram</a>
-        <a href="https://vimeo.com/" target="_blank">Vimeo</a>
-        <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
-        <a href="https://drama-project-url.com" target="_blank">DRAMA</a>
+        <a href="https://instagram.com/karensauri" target="_blank">Instagram</a>
+        <a href="https://javierbotellaperez.github.io/holadrama" target="_blank">DRAMA</a>
       </div>
 
       <p class="credits-footer">© 2026 Karen Sauri Marchan</p>
     </div>
   </footer>
 
-  <script src="js/slider.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
