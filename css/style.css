@@ -1,9 +1,7 @@
 /* ==========================================================================
-   KAREN SAURI MARCHAN — CREATIVE PRODUCER PORTFOLIO
-   Style Sheet — Hollywood Golden Era / Modern Noir Aesthetic
+   KAREN SAURI MARCHAN — PORTFOLIO STYLES
    ========================================================================== */
 
-/* --- RESET & VARIABLES --- */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -13,7 +11,6 @@
 :root {
     --bg-primary: #0a0a0a;
     --bg-secondary: #121212;
-    --bg-card: #181818;
     --text-primary: #f5f4f0;
     --text-secondary: #a0a0a0;
     --accent-gold: #d4af37;
@@ -59,29 +56,16 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 4rem;
-    background: linear-gradient(to bottom, rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0));
-    transition: var(--transition-smooth);
+    padding: 1.5rem 4rem;
+    background: linear-gradient(to bottom, rgba(10, 10, 10, 0.95), rgba(10, 10, 10, 0));
 }
 
-.site-header.scrolled {
-    padding: 1.2rem 4rem;
-    background: rgba(10, 10, 10, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border-color);
-}
-
-/* Logo de DRAMA / Imagen del Logo */
-.site-logo-img {
-    height: 40px;
-    width: auto;
-    display: block;
-    object-fit: contain;
-    transition: var(--transition-smooth);
-}
-
-.site-logo-img:hover {
-    opacity: 0.8;
+.brand-name {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
 }
 
 .main-nav ul {
@@ -95,49 +79,25 @@ ul {
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--text-secondary);
-    position: relative;
 }
 
-.main-nav a:hover,
-.main-nav a.active {
+.main-nav a:hover {
     color: var(--text-primary);
 }
 
-.main-nav a::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background-color: var(--text-primary);
+/* Logo DRAMA en la derecha del menú */
+.drama-logo-img {
+    height: 28px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: 2px;
     transition: var(--transition-smooth);
 }
 
-.main-nav a:hover::after,
-.main-nav a.active::after {
-    width: 100%;
-}
-
-/* Link destacado DRAMA en menú */
-.main-nav .nav-drama {
-    color: var(--text-primary);
-    font-weight: 600;
-    padding: 0.4rem 0.8rem;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 2px;
-    letter-spacing: 0.25em;
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.main-nav .nav-drama:hover {
-    background: var(--text-primary);
-    color: var(--bg-primary);
-    border-color: var(--text-primary);
-}
-
-.main-nav .nav-drama::after {
-    display: none;
+.drama-logo-img:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
 }
 
 /* --- 1. HERO SLIDER SECTION --- */
@@ -157,13 +117,10 @@ ul {
 
 .slide {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
 .slide.active {
@@ -174,14 +131,14 @@ ul {
 .video-background {
     width: 100%;
     height: 100%;
-    position: relative;
 }
 
+/* Vídeo con brillo real (sin capa oscura) */
 .video-background video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.65) contrast(1.1);
+    filter: none; 
 }
 
 .slide-credits {
@@ -190,15 +147,15 @@ ul {
     left: 4rem;
     z-index: 10;
     max-width: 600px;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
 }
 
 .slide-credits .role {
-    display: inline-block;
     font-size: 0.75rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--accent-gold);
+    display: block;
     margin-bottom: 0.5rem;
 }
 
@@ -208,14 +165,13 @@ ul {
     font-weight: 400;
     line-height: 1.1;
     margin-bottom: 0.3rem;
-    letter-spacing: -0.02em;
 }
 
 .slide-credits .artist-name {
     font-size: 1.5rem;
     font-weight: 300;
-    color: rgba(255, 255, 255, 0.85);
-    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.8rem;
 }
 
 .slide-credits .meta {
@@ -223,6 +179,40 @@ ul {
     color: var(--text-secondary);
     letter-spacing: 0.1em;
     text-transform: uppercase;
+}
+
+/* Slider Controls */
+.slider-controls {
+    position: absolute;
+    bottom: 5rem;
+    right: 4rem;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: rgba(10, 10, 10, 0.7);
+    padding: 0.8rem 1.5rem;
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-color);
+}
+
+.slider-controls button {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+}
+
+.slider-controls button:hover {
+    color: var(--accent-gold);
+}
+
+.slide-counter {
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    color: var(--text-secondary);
 }
 
 /* --- 2. MUSIC VIDEOS GRID SECTION --- */
@@ -238,23 +228,11 @@ ul {
     letter-spacing: 0.05em;
     margin-bottom: 3rem;
     text-transform: uppercase;
-    position: relative;
-    display: inline-block;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 40px;
-    height: 1px;
-    background-color: var(--text-primary);
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
     gap: 3rem 2rem;
 }
 
@@ -275,13 +253,11 @@ ul {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(20%) contrast(1.05);
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease;
+    transition: transform 0.6s ease;
 }
 
 .video-card:hover .thumb-wrapper img {
     transform: scale(1.05);
-    filter: grayscale(0%) contrast(1.1);
 }
 
 .card-overlay {
@@ -301,25 +277,17 @@ ul {
     text-transform: uppercase;
     padding: 0.6rem 1.2rem;
     border: 1px solid var(--text-primary);
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(4px);
-    transform: translateY(10px);
-    transition: var(--transition-smooth);
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .video-card:hover .card-overlay {
     opacity: 1;
 }
 
-.video-card:hover .card-overlay span {
-    transform: translateY(0);
-}
-
 .card-info h4 {
     font-family: var(--font-serif);
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 400;
-    margin-bottom: 0.2rem;
 }
 
 .card-info p {
@@ -343,12 +311,10 @@ ul {
     text-align: center;
 }
 
-/* Retrato de Karen (En Color) */
 .portrait-wrapper {
     width: 220px;
     height: 280px;
     margin: 0 auto 3rem auto;
-    position: relative;
 }
 
 .portrait-img {
@@ -358,18 +324,6 @@ ul {
     filter: none; /* Foto en color natural */
     border: 1px solid var(--border-color);
     box-shadow: 0 15px 35px rgba(0,0,0,0.8);
-}
-
-/* Marco sutil elegante */
-.portrait-wrapper::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: -8px;
-    right: -8px;
-    bottom: -8px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    pointer-events: none;
 }
 
 .about-name {
@@ -385,69 +339,43 @@ ul {
     font-size: 1.15rem;
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 3.5rem;
+    margin-bottom: 3rem;
     font-weight: 300;
 }
 
-/* Hipervínculos en el texto de la Bio (DRAMA y CANADA) */
 .bio-link {
     color: var(--text-primary);
     text-decoration: underline;
     text-underline-offset: 4px;
-    font-weight: 400;
-    transition: var(--transition-smooth);
 }
 
 .bio-link:hover {
     color: var(--accent-gold);
-    text-decoration-color: var(--accent-gold);
 }
 
-/* Banner / Enlace DRAMA abajo */
-.drama-highlight {
-    padding: 2rem;
-    background: #0d0d0d;
-    border: 1px solid var(--border-color);
-    margin-top: 2rem;
-}
-
-.drama-button {
+.drama-btn-img {
+    height: 35px;
+    width: auto;
     display: inline-block;
-    font-family: var(--font-serif);
-    font-size: 1.8rem;
-    letter-spacing: 0.2em;
-    color: var(--text-primary);
-    padding: 0.5rem 1.5rem;
-    border-bottom: 2px solid var(--text-primary);
     transition: var(--transition-smooth);
 }
 
-.drama-button:hover {
-    color: var(--accent-gold);
-    border-color: var(--accent-gold);
-    letter-spacing: 0.25em;
+.drama-btn-img:hover {
+    transform: scale(1.08);
 }
 
-/* --- 4. CONTACT SECTION & FOOTER --- */
+/* --- 4. CONTACT & FOOTER --- */
 .contact-section {
     padding: 6rem 4rem 3rem 4rem;
     background-color: var(--bg-primary);
     text-align: center;
 }
 
-.contact-details {
-    margin-bottom: 3.5rem;
-}
-
 .email-link {
     font-family: var(--font-serif);
     font-size: 2.5rem;
     display: inline-block;
-    margin-bottom: 0.5rem;
-}
-
-.email-link:hover {
-    color: var(--accent-gold);
+    margin-bottom: 2rem;
 }
 
 .social-links {
@@ -464,10 +392,6 @@ ul {
     color: var(--text-secondary);
 }
 
-.social-links a:hover {
-    color: var(--text-primary);
-}
-
 .credits-footer {
     font-size: 0.7rem;
     letter-spacing: 0.2em;
@@ -477,29 +401,46 @@ ul {
     padding-top: 2rem;
 }
 
-/* --- RESPONSIVE DESIGN --- */
-@media (max-width: 1024px) {
-    .site-header { padding: 1.5rem 2rem; }
-    .slide-credits { left: 2rem; bottom: 4rem; }
-    .videos-grid-section, .about-section, .contact-section { padding: 5rem 2rem; }
-    .grid-container { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
-    .email-link { font-size: 1.8rem; }
+/* --- REPRODUCTOR MODAL LIGHTBOX --- */
+.video-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.92);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition-smooth);
 }
 
-@media (max-width: 768px) {
-    .site-header {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
-        background: rgba(10, 10, 10, 0.95);
-    }
-    
-    .main-nav ul { gap: 1.2rem; }
-    .main-nav a { font-size: 0.75rem; }
-    
-    .slide-credits .song-title { font-size: 2.2rem; }
-    .slide-credits .artist-name { font-size: 1.1rem; }
-    
-    .grid-container { grid-template-columns: 1fr; }
-    .social-links { flex-wrap: wrap; gap: 1.5rem; }
+.video-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    aspect-ratio: 16 / 9;
+    background: #000;
+}
+
+.modal-content video {
+    width: 100%;
+    height: 100%;
+}
+
+.close-modal {
+    position: absolute;
+    top: -35px;
+    right: 0;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    cursor: pointer;
 }
