@@ -1,95 +1,63 @@
-/* ==========================================================================
-   MAIN.JS — GENERAL INTERACTION & LIGHTBOX MODAL
-   ========================================================================== */
-
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Header scroll effect
-    const header = document.querySelector('.site-header');
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
 
-    // 2. Active Menu State on Scroll
-    const sections = document.querySelectorAll('section, footer');
-    const navLinks = document.querySelectorAll('.main-nav a[href^="#"]');
+    /* --- 1. LÓGICA DEL SLIDER PRINCIPAL --- */
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.querySelector('.prev-slide');
+    const nextBtn = document.querySelector('.next-slide');
+    const counter = document.querySelector('.slide-counter');
+    let currentSlide = 0;
 
-    window.addEventListener('scroll', () => {
-        let currentSection = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 150;
-            const sectionHeight = section.clientHeight;
-            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                currentSection = section.getAttribute('id');
-            }
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            const video = slide.querySelector('video');
+            if (video) video.pause();
         });
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${currentSection}`) {
-                link.classList.add('active');
-            }
-        });
-    });
+        currentSlide = (index + slides.length) % slides.length;
+        slides[currentSlide].classList.add('active');
+        
+        const currentVideo = slides[currentSlide].querySelector('video');
+        if (currentVideo) currentVideo.play();
 
-    // 3. Video Modal (Lightbox para Vimeo / YouTube en la rejilla)
-    const videoCards = document.querySelectorAll('.video-card');
-    
-    // Crear el modal e inyectarlo en el body
-    const modal = document.createElement('div');
-    modal.className = 'video-modal';
-    modal.innerHTML = `
-        <div class="modal-content">
-            <button class="close-modal">CLOSE ✕</button>
-            <iframe src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-        </div>
-    `;
-    document.body.appendChild(modal);
-
-    const iframe = modal.querySelector('iframe');
-    const closeBtn = modal.querySelector('.close-modal');
-
-    // Evento click para abrir modal
-    videoCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const vimeoId = card.getAttribute('data-vimeo-id');
-            const youtubeId = card.getAttribute('data-youtube-id');
-
-            if (vimeoId) {
-                iframe.src = `https://player.vimeo.com/video/${vimeoId}?autoplay=1&title=0&byline=0&portrait=0`;
-            } else if (youtubeId) {
-                iframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1`;
-            } else {
-                return;
-            }
-
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Bloquear scroll
-        });
-    });
-
-    // Función para cerrar modal
-    function closeModal() {
-        modal.classList.remove('active');
-        iframe.src = '';
-        document.body.style.overflow = ''; // Restaurar scroll
+        counter.textContent = `0${currentSlide + 1} / 0${slides.length}`;
     }
 
-    closeBtn.addEventListener('click', closeModal);
-    
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            closeModal();
-        }
+    if (nextBtn && prevBtn) {
+        nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+        prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+    }
+
+    /* --- 2. MODAL LIGHTBOX PARA REPRODUCIR VÍDEOS AL HACER CLIC EN THUMBNAILS --- */
+    const videoCards = document.querySelectorAll('.video-card');
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    const closeModal = document.querySelector('.close-modal');
+
+    videoCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const videoSrc = card.getAttribute('data-video-src');
+            if (videoSrc) {
+                modalVideo.src = videoSrc;
+                modal.classList.add('active');
+                modalVideo.play();
+            }
+        });
     });
 
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('active')) {
-            closeModal();
-        }
-    });
+    function closeVideoModal() {
+        modal.classList.remove('active');
+        modalVideo.pause();
+        modalVideo.src = '';
+    }
+
+    if (closeModal) {
+        closeModal.addEventListener('click', closeVideoModal);
+    }
+
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeVideoModal();
+        });
+    }
 });
